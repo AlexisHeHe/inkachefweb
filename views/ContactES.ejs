@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inka Chef: Peruvian Cuisine | Contactanos</title>
+  <meta name="description" content="Inka Chef serves high quality and traditional plates in every order. Our mission is to show why Peruvian Cuisine is ranked among the best Cuisines globally.">
+  <meta property="og:title" content="Inka Chef: Peruvian Cuisine | Contactanos">
+  <meta property="og:description" content="Inka Chef serves high quality and traditional plates in every order. Our mission is to show why Peruvian Cuisine is ranked among the best Cuisines globally."">
+  <meta property="og:url" content="https://www.inkachef.com/contactes">
+  <meta property="og:image" content="https://www.inkachef.com/logo.JPG">
+  <meta property="og:site_name" content="Inka Chef: Peruvian Cuisine">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://www.inkachef.com/logo.JPG">
+  <meta name="twitter:title" content="Inka Chef: Peruvian Cuisine | Contactanos">
+  <link rel="canonical" href="https://www.inkachef.com/contactes">
+  <meta name="keywords" content="peruvian food, peruvian cuisine, peru, inka chef, peruvian restaurants, peruano, comida peruano">
+  <%- include("./reusedFiles/Header.ejs") %>
+</head>
+<body style="background-color: rgb(243, 159, 81);">
+
+  <%- include("./reusedFiles/NavbarES.ejs") %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12" style="text-align: center;"><br>
+        <button class="btn  active" id="Infobtn" style="background-color: rgb(243, 159, 81); color:white; font-size: 9px;">Informacion de <br>Contacto</button>
+        <button class="btn" id="Feedbackbtn" style="background-color: rgb(217,16,35);color:white;">Cometario</button>
+        <br><hr>
+
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="container" id="ContactInfo">
+    <div class="row">
+      <div class="col-12" style="display:flex; justify-content: center;">
+        <p style="text-align: center;">
+          <span id="ContactInfoSpan"> Horario </span><br>
+          Lun-Sab: 11am-9pm <br>
+          Domingo: 9pm-9pm
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      
+      <div class="col-12" style="display:flex;  justify-content: center;">
+        <p style="text-align: center;">
+          <br>Numero de Telefono: <br> +1 (571) 602-1077 <br> <br>
+          <span id="Email">Email: inkachefmanassas@gmail.com </span>
+        </p>
+      </div>
+    </div><hr>
+  </div>
+
+  <div class="container" id="Feedback" style="display:none; text-align: center; 
+  padding:20px;">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <form action="/feedbackenglish" method="post">
+          <input type="text" name="firstname" id="firstname" placeholder="Nombre de pila"><br> <br>
+          <input type="text" name="lastname" id="lastname" placeholder="Apellido"><br> <br>
+          <input type="email" name="email" id="email" placeholder="example@gmail.com"> <br> <br>
+          <textarea name="feedback" id="body" cols="20" rows="5" placeholder="Empieza a escribir aquí..."></textarea><br>
+          <input type="submit" value="Manda Cometario" class="btn btn-warning">
+        </form>
+        <br><hr>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script>
+    let contactInfo = document.getElementById("ContactInfo");
+    let feedback = document.getElementById("Feedback");
+    let contactInfoButton = document.querySelector("#Infobtn");
+    let feedbackButton = document.querySelector("#Feedbackbtn");
+
+    contactInfoButton.addEventListener("click", (e) => {
+      contactInfo.style.display = "block";
+      feedback.style.display = "none";
+      feedbackButton.style.background = "rgb(217,16,35)";
+      contactInfoButton.style.background = "rgb(243, 159, 81)";
+      feedbackButton.classList.remove("active");
+      contactInfoButton.classList.add("active");
+      
+    })
+
+    feedbackButton.addEventListener("click", (e) => {
+      feedback.style.display = "block";
+      contactInfo.style.display = "none";
+      contactInfoButton.style.background = "rgb(217,16,35)";
+      feedbackButton.style.background = "rgb(243, 159, 81)";
+      contactInfoButton.classList.remove("active");
+      feedbackButton.classList.add("active");
+    })
+  </script>
+
+
+  <%- include("./reusedFiles/HomeButtonES.ejs") %>
+  
+
+  <%- include("./reusedFiles/Footer.ejs") %>
+</body>
+</html>
